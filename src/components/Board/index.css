@@ -1,0 +1,105 @@
+.board {
+  padding: 10px;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cells {
+  display: grid;
+  gap: 10px;
+}
+.row {
+  display: grid;
+  gap: 10px;
+}
+.row.hide .cell {
+  background-color: gray;
+}
+.cell {
+  border: 1px solid var(--primary);
+  font-size: 4vh;
+  font-weight: bold;
+  display: grid;
+  place-items: center;
+  color: var(--primary);
+  animation: none;
+  text-transform: capitalize;
+  border-radius: 2px;
+  background-color: var(--bg);
+  transition: transform 0.5s ease-in-out;
+}
+.zoom {
+  animation: zoom 0.2s ease-in-out 0ms;
+}
+.exact:nth-child(1),
+.nearby:nth-child(1),
+.none:nth-child(1) {
+  animation-delay: 0ms !important;
+}
+.exact:nth-child(2),
+.nearby:nth-child(2),
+.none:nth-child(2) {
+  animation-delay: 100ms !important;
+}
+.exact:nth-child(3),
+.nearby:nth-child(3),
+.none:nth-child(3) {
+  animation-delay: 200ms !important;
+}
+.exact:nth-child(4),
+.nearby:nth-child(4),
+.none:nth-child(4) {
+  animation-delay: 300ms !important;
+}
+.exact:nth-child(5),
+.nearby:nth-child(5),
+.none:nth-child(5) {
+  animation-delay: 400ms !important;
+}
+.absolute {
+  position: absolute;
+  display: grid;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.exact {
+  background-color: green !important;
+  animation: anim 0.5s ease-in-out;
+}
+.nearby {
+  background-color: coral !important;
+  animation: anim 0.5s ease-in-out;
+}
+.none {
+  background-color: gray;
+  animation: anim 0.5s ease-in-out;
+}
+
+@keyframes zoom {
+  0% {
+    scale: 1;
+  }
+  25% {
+    scale: 1.1;
+  }
+  50% {
+    scale: 1.2;
+  }
+  75% {
+    scale: 1.1;
+  }
+  100% {
+    scale: 1;
+  }
+}
+@keyframes anim {
+  0% {
+    transform: rotateX(-90deg);
+  }
+
+  100% {
+    transform: rotateX(0deg);
+  }
+}
